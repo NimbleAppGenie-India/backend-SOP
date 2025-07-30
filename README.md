@@ -61,8 +61,9 @@ This document ensure developers follows the structure of our project development
   - In NodeJS projects, we follow 2 kinds of structure, `Monolithic` and `Micro-Service` based structure.
     - To utilize databases, we shall use [Sequelize ORM](https://sequelize.org/docs/v6/), or any better ORM as per required performance
     - To utilize MongoDB, we shall use [Mongoose](https://mongoosejs.com/docs/)
-  - Databases shall be managed by migrations. Please visit [Laravel](https://laravel.com/docs/10.x/migrations) and [Sequelize](https://sequelize.org/docs/v6/other-topics/migrations/) approach for the migrations and seeder. Any static data
+  - Databases shall be managed by migrations. Please visit [Laravel](https://laravel.com/docs/10.x/migrations) and [Sequelize](https://sequelize.org/docs/v6/other-topics/migrations/) approach for the migrations and seeder. Any static data shall be inserted through seeders. Visit same documentations for seeders in [Laravel](https://laravel.com/docs/seeding) and [Sequelize](https://sequelize.org/docs/v6/other-topics/migrations/#creating-the-first-seed)
 - Admin Management
   - Laravel project offers frontend in itself, so admin shall be developed in the same project
   - For Node JS projects, an separate admin panel shall be developed in [react js](https://react.dev/learn) or any JS framework if client mentions requirement for admin panel in another JS framework
   - For React, we leverage to use [Vite](https://vite.dev/guide/#scaffolding-your-first-vite-project) for faster build time and Server Side Rendering (SSR) if required.
+  - Design for the template of your choice, but we prefer to be constant with the admin development. Template/schema will be shared soon.
