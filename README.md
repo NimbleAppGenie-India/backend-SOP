@@ -67,3 +67,22 @@ This document ensure developers follows the structure of our project development
   - For Node JS projects, an separate admin panel shall be developed in [react js](https://react.dev/learn) or any JS framework if client mentions requirement for admin panel in another JS framework
   - For React, we leverage to use [Vite](https://vite.dev/guide/#scaffolding-your-first-vite-project) for faster build time and Server Side Rendering (SSR) if required.
   - Design for the template of your choice, but we prefer to be constant with the admin development. Template/schema will be shared soon.
+
+## Key Highlights during development
+
+These highlights mentioned below focuses on the current standards of development to ensure better development experience and ensure better practices in the API && Admin development.
+
+1. Any constants shall be managed through enviornment files like `.env`
+   1. A template for `.env` named as `.env.example` file shall be managed for quicker environment setup.
+   2. Any configuration, which isn't/can't mentioned in the environment shall be managed separately through configs in JSON.
+2. Any schema related to databases shall be managed through migrations.
+3. Primary keys for API shall be UUID
+4. Adhere with [REST standards](https://restfulapi.net/).
+5. Common packages used in development
+   - [pm2](https://www.npmjs.com/package/pm2)
+   - [axios](https://www.npmjs.com/package/axios)
+   - [dotenv](https://www.npmjs.com/package/dotenv)
+   - [winston](https://www.npmjs.com/package/winston)
+   - [bcryptjs](https://www.npmjs.com/package/bcryptjs)
+   - [jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken)
+   - [barryvdh/laravel-dompdf](https://packagist.org/packages/barryvdh/laravel-dompdf)
