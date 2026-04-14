@@ -48,25 +48,25 @@ This document ensure developers follows the structure of our project development
 - Database Structure
   - Database shall follow this structure,
     - Table names shall be in snake_case, written as plural noun, e.g. `users`, `payments`, `contents`, `email_templates`, etc.
-    - Model related to the table shall be in singular noun, in PascalCase
+    - Model related to the table shall be in singular noun, in PascalCase, e.g. `UserPayment`, `PostImage`, `Transaction`
     - Enums shall be written in MACRO_CASE, e.g. `PUBLISHED` or `IN_TRANSIT`
-    - Slugs related to webpages or any keys shall be in kebab-case
+    - Slugs related to webpages or any keys shall be in kebab-case, e.g. `terms-n-condition` or `privacy-policy`
     - If the data is returned in API, and any details can be accessed by it's type, the primary for such has to be UUID.
-    - Names of column shall be in camelCase. e.g. `fullName`, `createdAt`, `updatedAt`, etc.,
+    - Names of the columns in the DB or collection shall be in camelCase. e.g. `fullName`, `createdAt`, `updatedAt`, etc.,
 - Authentication
   - For PHP projects, SPA based authentication shall be implemented, hence [Sanctum](https://laravel.com/docs/sanctum) shall be used.
   - For Node JS projects, [JWT](https://www.npmjs.com/package/jsonwebtoken) shall be implemented, in which the token shall not return the User ID. The authentication process need to have a work around to fetch user indirectly.
 - Code structure
   - In Laravel projects, we shall follow the structure as it is, with a Dependency Injection based approach, where we create service for common functionalities and use them accross the controllers.
   - In NodeJS projects, we follow 2 kinds of structure, `Monolithic` and `Micro-Service` based structure.
-    - To utilize databases, we shall use [Sequelize ORM](https://sequelize.org/docs/v6/), or any better ORM as per required performance
+    - To utilize databases, we shall use [Prisma](https://www.prisma.io/docs) or [Sequelize ORM](https://sequelize.org/docs/v6/), or any better ORM as per required performance
     - To utilize MongoDB, we shall use [Mongoose](https://mongoosejs.com/docs/)
   - Databases shall be managed by migrations. Please visit [Laravel](https://laravel.com/docs/10.x/migrations) and [Sequelize](https://sequelize.org/docs/v6/other-topics/migrations/) approach for the migrations and seeder. Any static data shall be inserted through seeders. Visit same documentations for seeders in [Laravel](https://laravel.com/docs/seeding) and [Sequelize](https://sequelize.org/docs/v6/other-topics/migrations/#creating-the-first-seed)
 - Admin Management
   - Laravel project offers frontend in itself, so admin shall be developed in the same project
   - For Node JS projects, an separate admin panel shall be developed in [react js](https://react.dev/learn) or any JS framework if client mentions requirement for admin panel in another JS framework
-  - For React, we leverage to use [Vite](https://vite.dev/guide/#scaffolding-your-first-vite-project) for faster build time and Server Side Rendering (SSR) if required.
-  - Design for the template of your choice, but we prefer to be constant with the admin development. Template/schema will be shared soon.
+  - For React, we leverage to use [Vite](https://vite.dev/guide/#scaffolding-your-first-vite-project) for faster build time and if Server Side Rendering (SSR) is required, then switch to [Next.js](https://nextjs.org/docs/app/getting-started/installation).
+  - Design for the admin shall be of either your choice or depends on the theme/schema of the application for which the admin is build, but we prefer to keep the theming constant across the admin development. Template/Design schema shall be shared soon.
 
 ## Key Highlights during development
 
@@ -79,10 +79,12 @@ These highlights mentioned below focuses on the current standards of development
 3. Primary keys for API shall be UUID
 4. Adhere with [REST standards](https://restfulapi.net/).
 5. Common packages used in development
-   - [pm2](https://www.npmjs.com/package/pm2)
-   - [axios](https://www.npmjs.com/package/axios)
-   - [dotenv](https://www.npmjs.com/package/dotenv)
-   - [winston](https://www.npmjs.com/package/winston)
-   - [bcryptjs](https://www.npmjs.com/package/bcryptjs)
-   - [jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken)
-   - [barryvdh/laravel-dompdf](https://packagist.org/packages/barryvdh/laravel-dompdf)
+   - JavaScript
+     - [pm2](https://www.npmjs.com/package/pm2)
+     - [axios](https://www.npmjs.com/package/axios)
+     - [dotenv](https://www.npmjs.com/package/dotenv)
+     - [winston](https://www.npmjs.com/package/winston)
+     - [bcryptjs](https://www.npmjs.com/package/bcryptjs)
+     - [jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken)
+   - PHP
+     - [barryvdh/laravel-dompdf](https://packagist.org/packages/barryvdh/laravel-dompdf)
