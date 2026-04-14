@@ -24,7 +24,7 @@ This document ensure developers follows the structure of our project development
   - For APIs, we have to follow 2 types of structure, each response shall have mandatory status and message, data in the `result` key as exception, either require or not.
     1. Simple response
 
-        ```json
+        ```jsonc
             {
                 "status": true, // boolean
                 "message": "" // string
@@ -33,7 +33,7 @@ This document ensure developers follows the structure of our project development
 
     2. Data response
 
-        ```json
+        ```jsonc
             {
                 "status": true, // boolean
                 "result": {}, // array ([]) or object ({})
